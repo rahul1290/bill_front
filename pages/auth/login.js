@@ -1,15 +1,13 @@
 import { useState } from 'react'
 import axios from 'axios';
 
+
 export default function Login() {
     const [loginform, setloginForm] = useState({
         identity :'',
         password : ''
-    });
 
-    // axios.get('http://localhost/bill/auth').then(response => {
-    //     console.log(response);
-    // });
+    });
 
     const handleInput = (e) => {
         const name = e.target.name;
@@ -17,25 +15,16 @@ export default function Login() {
         setloginForm({...loginform,[name] : value});        
     }
 
-    
     const loginSubmit = async (e) => {
         e.preventDefault();
-        // const response = await fetch('http://localhost/bill/auth/login',{
-        //     method : 'POST',
-        //     body : JSON.stringify({loginform}),
-        //     headers : {
-        //         'Content-Type' :'application/json'
-        //     }
-        // })
-        // const data = await response.json()
-        // console.log(data);
-        axios.post('/api/login', {
-            identity : 'rahul@gmail.com',
-            password : '1234'
-        })
-            .then(response => {
-                console.log(response);
-            });
+
+        axios.post('http://localhost/bill/auth/login', loginform)
+        .then(response => {
+            console.log(response.data);
+        }).catch(error =>{
+            console.log(error);
+        });
+        
     }
 
 
@@ -72,5 +61,6 @@ export default function Login() {
                 </div>
             </div>
         </>
-    );
+    );    
 }
+

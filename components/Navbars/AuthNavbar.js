@@ -36,8 +36,8 @@ export default function Navbar(props) {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="flex items-center">
-                <Link href="/"><i class="cursor-pointer text-white fab fa-app-store mr-4"></i></Link>
-                <Link href="/"><i class="cursor-pointer text-white fab fa-google-play"></i></Link>
+                <Link href="/"><i className="cursor-pointer text-white fab fa-app-store mr-4"></i></Link>
+                <Link href="/"><i className="cursor-pointer text-white fab fa-google-play"></i></Link>
               
               </li>
             </ul>
